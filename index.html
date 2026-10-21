@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#111318">
+  <title>Coleta de Dígitos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- Tela 1: identificação -->
+    <section id="tela-inicio" class="tela">
+      <h1>Coleta de Dígitos</h1>
+      <p class="sub">Vamos desenhar 100 números (10 de cada, de 0 a 9).<br>Leva uns 10 minutos.</p>
+
+      <label for="participante" class="rotulo">Quem é você?</label>
+      <select id="participante">
+        <option value="Pessoa 1">Pessoa 1</option>
+        <option value="Pessoa 2">Pessoa 2</option>
+        <option value="Pessoa 3">Pessoa 3</option>
+        <option value="Pessoa 4">Pessoa 4</option>
+        <option value="Pessoa 5">Pessoa 5</option>
+        <option value="Pessoa 6">Pessoa 6</option>
+        <option value="Pessoa 7">Pessoa 7</option>
+        <option value="Pessoa 8">Pessoa 8</option>
+      </select>
+      <p id="aviso-retomar" class="aviso" hidden></p>
+
+      <button id="btn-comecar" class="btn primario grande">Começar</button>
+
+      <ul class="dicas">
+        <li>Desenhe com o dedo ou com o mouse.</li>
+        <li>Escreva como você escreve normalmente.</li>
+        <li>Seu progresso fica salvo neste aparelho se a página fechar.</li>
+      </ul>
+    </section>
+
+    <!-- Tela 2: desenho -->
+    <section id="tela-desenho" class="tela" hidden>
+      <header class="topo">
+        <span id="quem" class="quem"></span>
+        <span id="progresso-texto" class="progresso-texto"></span>
+      </header>
+      <div class="barra"><div id="barra-preenchida"></div></div>
+
+      <h2 class="instrucao">Desenhe o número <span id="digito-alvo" class="digito">7</span></h2>
+
+      <div class="quadro">
+        <canvas id="quadro" width="280" height="280" aria-label="Área de desenho"></canvas>
+      </div>
+
+      <div class="botoes">
+        <button id="btn-apagar" class="btn secundario">Apagar</button>
+        <button id="btn-salvar" class="btn primario" disabled>Salvar e continuar</button>
+      </div>
+    </section>
+
+    <!-- Tela 3: fim -->
+    <section id="tela-fim" class="tela" hidden>
+      <div class="check">✓</div>
+      <h1>Pronto, obrigado!</h1>
+      <p class="sub"><span id="fim-quem"></span> desenhou os 100 números.</p>
+      <p class="sub">Baixe o arquivo e envie para quem organizou a coleta.</p>
+
+      <button id="btn-baixar" class="btn primario grande">Baixar arquivo JSON</button>
+      <button id="btn-compartilhar" class="btn secundario grande" hidden>Compartilhar arquivo</button>
+
+      <button id="btn-novo" class="btn link">Começar com outra pessoa</button>
+    </section>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
